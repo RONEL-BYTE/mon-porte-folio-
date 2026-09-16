@@ -30,6 +30,8 @@ const isProduction = process.env.NODE_ENV === "production";
 const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
+app.set("trust proxy", isProduction ? 1 : 0);
+
 if (isProduction && !process.env.SUPABASE_SERVICE_ROLE_KEY) {
   throw new Error("SUPABASE_SERVICE_ROLE_KEY est obligatoire en production");
 }
@@ -42,11 +44,11 @@ if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
 // MIDDLEWARES
 // ============================================================
 
-const allowedOrigins = new Set([
-  frontendUrl,
-  "http://localhost:5173",
-  "http://127.0.0.1:5173",
-]);
+const allowedOrigins = new Set(
+  isProduction
+    ? [frontendUrl]
+    : [frontendUrl, "http://localhost:5173", "http://127.0.0.1:5173"]
+);
 
 app.use(helmet({
   crossOriginResourcePolicy: { policy: "cross-origin" },
@@ -2539,7 +2541,7 @@ app.use((error, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
 
   console.log(
     `Serveur démarré sur http://localhost:${PORT}`
