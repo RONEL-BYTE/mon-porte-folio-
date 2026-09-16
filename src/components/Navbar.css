@@ -1,0 +1,432 @@
+/* ========================================
+   STITCH NAVBAR
+======================================== */
+
+.stitch-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+
+  background: rgba(5, 8, 14, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.navbar-container {
+  width: min(1400px, 92%);
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+/* ========================================
+   BRAND
+======================================== */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #fff;
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+.navbar-logo {
+  width: 42px;
+  height: 42px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.navbar-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.navbar-name {
+  color: #fff;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+.navbar-role {
+  width: fit-content;
+
+  padding: 3px 7px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+
+  color: #8d98aa;
+
+  font-size: 0.58rem;
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   DESKTOP MENU
+======================================== */
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 5px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+}
+
+.navbar-menu a {
+  position: relative;
+
+  padding: 9px 12px;
+
+  color: #7f8999;
+  text-decoration: none;
+
+  border-radius: 7px;
+
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.navbar-menu a:hover {
+  color: #fff;
+}
+
+.navbar-menu a.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ========================================
+   RIGHT ACTIONS
+======================================== */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  flex-shrink: 0;
+}
+
+.navbar-socials {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navbar-socials a {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #7d8797;
+  text-decoration: none;
+
+  font-size: 0.65rem;
+  font-weight: 700;
+
+  border-radius: 50%;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.navbar-socials a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* ========================================
+   CONTACT BUTTON
+======================================== */
+
+.navbar-contact {
+  padding: 10px 15px;
+
+  color: #080b12;
+  background: #fff;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  font-size: 0.65rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.navbar-contact:hover {
+  transform: translateY(-2px);
+  background: #e5e8ed;
+}
+
+
+/* ========================================
+   AVATAR
+======================================== */
+
+.navbar-avatar {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+}
+
+.navbar-avatar img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.navbar-avatar span {
+  position: absolute;
+
+  right: 0;
+  bottom: 1px;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #4ade80;
+
+  border: 2px solid #080b12;
+}
+
+
+/* ========================================
+   MOBILE BUTTON
+======================================== */
+
+.navbar-toggle {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  padding: 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  cursor: pointer;
+}
+
+.navbar-toggle span {
+  display: block;
+
+  width: 20px;
+  height: 1px;
+
+  margin: 4px auto;
+
+  background: #fff;
+
+  transition: 0.3s ease;
+}
+
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+
+  .navbar-menu a {
+    padding: 8px 8px;
+    font-size: 0.62rem;
+  }
+
+  .navbar-socials {
+    display: none;
+  }
+
+  .navbar-container {
+    gap: 15px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 850px) {
+
+  .stitch-navbar {
+    height: 72px;
+  }
+
+  .navbar-container {
+    width: 90%;
+  }
+
+  .navbar-menu,
+  .navbar-actions {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .mobile-menu {
+    position: absolute;
+
+    top: 72px;
+    left: 5%;
+    right: 5%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+
+    background: rgba(8, 11, 18, 0.97);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .mobile-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mobile-menu a {
+    padding: 14px 15px;
+
+    color: #858fa0;
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition:
+      color 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .mobile-menu a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 430px) {
+
+  .navbar-container {
+    width: 88%;
+  }
+
+  .navbar-name {
+    font-size: 0.82rem;
+  }
+
+  .navbar-role {
+    font-size: 0.52rem;
+  }
+
+  .navbar-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .navbar-toggle {
+    width: 38px;
+    height: 38px;
+  }
+}

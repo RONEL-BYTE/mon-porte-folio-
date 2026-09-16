@@ -1,0 +1,549 @@
+/* =========================================================
+   ADMIN PROJECTS — STYLE PREMIUM
+   ========================================================= */
+
+.admin-projects {
+  min-height: 100vh;
+  padding: 40px 50px;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 30%),
+    #070b12;
+  color: #fff;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.admin-projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-projects-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.admin-projects-header p {
+  margin: 8px 0 0;
+  color: #8b95a7;
+  font-size: 0.95rem;
+}
+
+/* Bouton ajouter */
+
+.admin-projects-header button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 13px 20px;
+
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: #fff;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.admin-projects-header button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.28);
+}
+
+/* =========================
+   FORMULAIRE
+========================= */
+
+.admin-project-form {
+  max-width: 700px;
+  margin-bottom: 45px;
+
+  padding: 30px;
+
+  background: rgba(17, 24, 39, 0.85);
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  animation: formAppear 0.35s ease;
+}
+
+.admin-project-form h2 {
+  margin: 0 0 22px;
+  font-size: 1.25rem;
+}
+
+.admin-project-form input,
+.admin-project-form textarea {
+  width: 100%;
+  padding: 14px 15px;
+  margin-bottom: 15px;
+
+  box-sizing: border-box;
+
+  background: #0b1220;
+
+  border: 1px solid #253044;
+  border-radius: 9px;
+
+  color: #fff;
+
+  font-size: 0.95rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.admin-project-form input::placeholder,
+.admin-project-form textarea::placeholder {
+  color: #64748b;
+}
+
+.admin-project-form input:focus,
+.admin-project-form textarea:focus {
+  border-color: #3b82f6;
+
+  background: #0d1524;
+
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.admin-project-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* bouton formulaire */
+
+.admin-project-form button {
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #22c55e;
+  color: #fff;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.admin-project-form button:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   LISTE DES PROJETS
+========================= */
+
+.admin-project-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fill, minmax(310px, 1fr));
+
+  gap: 24px;
+}
+
+/* =========================
+   CARTE
+========================= */
+
+.admin-project-card {
+  position: relative;
+
+  overflow: hidden;
+
+  background: #0d1420;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 15px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.admin-project-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(59, 130, 246, 0.35);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(37, 99, 235, 0.06);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.admin-project-card img {
+  display: block;
+
+  width: 100%;
+  height: 200px;
+
+  object-fit: cover;
+
+  background: #111827;
+
+  transition: transform 0.5s ease;
+}
+
+.admin-project-card:hover img {
+  transform: scale(1.04);
+}
+
+/* overlay */
+
+.admin-project-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 200px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.25)
+  );
+
+  pointer-events: none;
+}
+
+/* =========================
+   CONTENU
+========================= */
+
+.admin-project-card-content {
+  padding: 22px;
+}
+
+.admin-project-card h3 {
+  margin: 0 0 10px;
+
+  font-size: 1.15rem;
+  font-weight: 650;
+
+  color: #fff;
+}
+
+.admin-project-card p {
+  margin: 0 0 18px;
+
+  color: #94a3b8;
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.project-technologies {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-bottom: 20px;
+}
+
+.project-technologies span {
+  padding: 5px 9px;
+
+  background: rgba(59, 130, 246, 0.08);
+
+  border: 1px solid rgba(59, 130, 246, 0.15);
+
+  border-radius: 6px;
+
+  color: #93c5fd;
+
+  font-size: 0.72rem;
+}
+
+/* =========================
+   LIENS
+========================= */
+
+.project-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 15px;
+}
+
+.project-actions a {
+  flex: 1;
+
+  text-align: center;
+
+  padding: 9px 12px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 0.82rem;
+
+  font-weight: 600;
+
+  background: #111c2d;
+
+  color: #93c5fd;
+
+  border: 1px solid #26364d;
+
+  transition: 0.25s ease;
+}
+
+.project-actions a:hover {
+  background: #17253a;
+
+  border-color: #3b82f6;
+
+  color: #fff;
+}
+
+/* =========================
+   SUPPRESSION
+========================= */
+
+.delete-project {
+  width: 100%;
+
+  margin-top: 12px;
+
+  padding: 10px;
+
+  border: 1px solid rgba(239, 68, 68, 0.2);
+
+  border-radius: 8px;
+
+  background: rgba(239, 68, 68, 0.06);
+
+  color: #f87171;
+
+  font-size: 0.82rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.delete-project:hover {
+  background: #dc2626;
+
+  border-color: #dc2626;
+
+  color: #fff;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes formAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   TABLETTE
+========================= */
+
+@media (max-width: 900px) {
+  .admin-projects {
+    padding: 30px;
+  }
+
+  .admin-project-list {
+    grid-template-columns:
+      repeat(auto-fill, minmax(270px, 1fr));
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .admin-projects {
+    padding: 22px 16px;
+  }
+
+  .admin-projects-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .admin-projects-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .admin-projects-header button {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .admin-project-form {
+    padding: 20px;
+  }
+
+  .admin-project-list {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .admin-project-card img {
+    height: 190px;
+  }
+}
+.admin-layout {
+  min-height: 100vh;
+  background: #070b12;
+}
+
+.admin-main {
+  margin-left: 250px;
+  min-height: 100vh;
+  padding: 45px;
+  box-sizing: border-box;
+}
+
+.admin-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+.admin-eyebrow {
+  color: #3b82f6;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.admin-page-header h1 {
+  margin: 8px 0;
+
+  font-size: 32px;
+}
+
+.admin-page-header p {
+  margin: 0;
+
+  color: #7d899b;
+}
+
+.add-project-button {
+  padding: 13px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #2563eb;
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.add-project-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 800px) {
+  .admin-main {
+    margin-left: 70px;
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .add-project-button {
+    width: 100%;
+  }
+}

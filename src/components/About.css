@@ -1,0 +1,233 @@
+/* ================================
+   ABOUT ME
+================================ */
+
+.about-section {
+  padding: 120px 8%;
+  background: #080b12;
+  color: #fff;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================================
+   HEADING
+================================ */
+
+.about-heading {
+  margin-bottom: 70px;
+}
+
+.about-heading .stitch-section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+
+  color: #8b95a7;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.about-heading .stitch-section-label i {
+  width: 45px;
+  height: 1px;
+  background: #fff;
+}
+
+.about-heading h2 {
+  margin: 0;
+
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -4px;
+  font-weight: 700;
+}
+
+.about-heading h2 span {
+  color: #7f899a;
+}
+
+
+/* ================================
+   CONTENT
+================================ */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.about-intro {
+  max-width: 650px;
+}
+
+.about-large-text {
+  margin: 0 0 30px;
+
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.about-intro > p:not(.about-large-text) {
+  margin: 0;
+
+  color: #8c96a7;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+
+/* ================================
+   DETAILS
+================================ */
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-detail {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: 20px;
+
+  padding: 25px 0;
+
+  border-top: 1px solid #202735;
+}
+
+.about-detail:last-child {
+  border-bottom: 1px solid #202735;
+}
+
+.about-detail > span {
+  color: #687386;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.about-detail h3 {
+  margin: 0 0 8px;
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.about-detail p {
+  margin: 0;
+
+  color: #7f899a;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+
+/* ================================
+   BOTTOM
+================================ */
+
+.about-bottom {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 80px;
+  padding-top: 25px;
+
+  border-top: 1px solid #202735;
+
+  color: #687386;
+
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+  .about-section {
+    padding: 90px 6%;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+  .about-section {
+    padding: 75px 5%;
+  }
+
+  .about-heading {
+    margin-bottom: 50px;
+  }
+
+  .about-heading h2 {
+    font-size: 3rem;
+    letter-spacing: -2px;
+  }
+
+  .about-large-text {
+    font-size: 1.35rem;
+  }
+
+  .about-intro > p:not(.about-large-text) {
+    font-size: 0.9rem;
+  }
+
+  .about-detail {
+    grid-template-columns: 35px 1fr;
+    gap: 12px;
+  }
+
+  .about-bottom {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 55px;
+  }
+
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 430px) {
+
+  .about-section {
+    padding: 65px 20px;
+  }
+
+  .about-heading h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-large-text {
+    font-size: 1.2rem;
+  }
+
+}

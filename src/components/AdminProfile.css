@@ -1,0 +1,344 @@
+/* ============================================================
+   PAGE
+============================================================ */
+
+.admin-profile-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: #070b12;
+  color: #ffffff;
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.admin-profile-header {
+  margin-bottom: 30px;
+}
+
+.admin-page-label {
+  display: inline-block;
+  color: #22d3ee;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.admin-profile-header h1 {
+  margin: 10px 0;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.admin-profile-header p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 15px;
+}
+
+
+/* ============================================================
+   MESSAGE
+============================================================ */
+
+.profile-message {
+  max-width: 1000px;
+  margin-bottom: 20px;
+  padding: 14px 18px;
+
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+
+  border-radius: 10px;
+
+  color: #67e8f9;
+  font-size: 14px;
+}
+
+
+/* ============================================================
+   FORMULAIRE
+============================================================ */
+
+.admin-profile-form {
+  width: 100%;
+  max-width: 1000px;
+}
+
+
+/* ============================================================
+   CARTE
+============================================================ */
+
+.profile-card {
+  margin-bottom: 25px;
+  padding: 30px;
+
+  background: #0d1420;
+
+  border: 1px solid rgba(148, 163, 184, 0.12);
+
+  border-radius: 16px;
+}
+
+.profile-card h2 {
+  margin: 0 0 25px;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   GRILLE
+============================================================ */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 22px;
+}
+
+
+/* ============================================================
+   CHAMP
+============================================================ */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+
+/* ============================================================
+   LABEL
+============================================================ */
+
+.form-group label {
+  color: #cbd5e1;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* ============================================================
+   INPUT + TEXTAREA
+============================================================ */
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  background: #070b12;
+
+  border: 1px solid #1e293b;
+
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  outline: none;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group textarea {
+  min-height: 110px;
+
+  resize: vertical;
+}
+
+
+/* ============================================================
+   PLACEHOLDER
+============================================================ */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #64748b;
+}
+
+
+/* ============================================================
+   FOCUS
+============================================================ */
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #22d3ee;
+
+  box-shadow:
+    0 0 0 2px rgba(34, 211, 238, 0.08);
+}
+
+
+/* ============================================================
+   RÉSEAUX SOCIAUX
+============================================================ */
+
+.profile-socials {
+  margin-top: 5px;
+}
+
+.socials-description {
+  margin: -10px 0 25px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   BOUTON
+============================================================ */
+
+.save-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 0;
+
+  padding: 14px 24px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #22d3ee;
+
+  color: #061018;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.save-profile-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 25px rgba(34, 211, 238, 0.2);
+}
+
+.save-profile-btn:active {
+  transform: translateY(0);
+}
+
+.save-profile-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* ============================================================
+   CHARGEMENT
+============================================================ */
+
+.profile-loading {
+  color: #94a3b8;
+
+  font-size: 15px;
+}
+
+
+/* ============================================================
+   ERREUR
+============================================================ */
+
+.profile-error {
+  padding: 20px;
+
+  background: rgba(239, 68, 68, 0.08);
+
+  border: 1px solid rgba(239, 68, 68, 0.2);
+
+  border-radius: 10px;
+
+  color: #fca5a5;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 800px) {
+
+  .admin-profile-page {
+    padding: 25px 20px;
+  }
+
+  .admin-profile-header h1 {
+    font-size: 30px;
+  }
+
+  .profile-card {
+    padding: 22px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: auto;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .admin-profile-page {
+    padding: 20px 15px;
+  }
+
+  .admin-profile-header h1 {
+    font-size: 26px;
+  }
+
+  .profile-card {
+    padding: 18px;
+  }
+
+  .profile-card h2 {
+    font-size: 18px;
+  }
+
+  .save-profile-btn {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,256 @@
+/* =========================================
+   STITCH — SKILLS & TECHNOLOGIES
+========================================= */
+
+.stitch-skills {
+  width: 100%;
+  padding: 100px 6%;
+  background: #0d111b;
+  color: #f5f7fb;
+}
+
+/* HEADER */
+
+.stitch-skills-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.stitch-skills-header h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.stitch-skills-header p {
+  margin: 8px 0 0;
+  color: #8b95a7;
+  font-size: 14px;
+}
+
+.skills-label {
+  display: block;
+  margin-bottom: 12px;
+  color: #22d3ee;
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.skills-status {
+  padding: 7px 12px;
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  border-radius: 8px;
+  color: #22d3ee;
+  font-family: monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+/* LAYOUT */
+
+.skills-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+/* PROFICIENCY */
+
+.proficiency-card {
+  padding: 24px;
+  background: rgba(25, 31, 43, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.proficiency-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.proficiency-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.proficiency-header span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.proficiency-header small {
+  color: #667085;
+  font-family: monospace;
+  font-size: 9px;
+}
+
+.proficiency-type {
+  color: #22d3ee !important;
+  font-family: monospace;
+  font-size: 9px !important;
+}
+
+/* BARS */
+
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill-row {
+  width: 100%;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  color: #b5bdca;
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.skill-info strong {
+  color: #aeb7c6;
+  font-weight: 400;
+}
+
+.skill-track {
+  width: 100%;
+  height: 4px;
+  overflow: hidden;
+  background: #252d3c;
+  border-radius: 10px;
+}
+
+.stitch-skill-progress {
+  height: 100%;
+  width: 0;
+  background: #22d3ee !important;
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
+/* CATEGORIES */
+
+.skills-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.skill-category {
+  min-height: 180px;
+  padding: 18px;
+  background: rgba(25, 31, 43, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.035);
+  border-radius: 12px;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-3px);
+  background: #1a2230;
+  border-color: rgba(34, 211, 238, 0.18);
+}
+
+.skill-category-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.category-number {
+  color: #22d3ee;
+  font-family: monospace;
+  font-size: 9px;
+}
+
+.category-arrow {
+  color: #687386;
+  font-size: 13px;
+}
+
+.skill-category h3 {
+  margin: 0 0 8px;
+  color: #e8ebf0;
+  font-size: 14px;
+}
+
+.skill-category p {
+  margin: 0 0 15px;
+  color: #7f899b;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* TECHNOLOGIES */
+
+.category-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.category-tech span {
+  padding: 4px 7px;
+  background: #202838;
+  border-radius: 4px;
+  color: #929caf;
+  font-family: monospace;
+  font-size: 8px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+  .skills-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .stitch-skills {
+    padding: 80px 5%;
+  }
+
+  .stitch-skills-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skills-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .proficiency-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 430px) {
+  .stitch-skills {
+    padding: 60px 5%;
+  }
+
+  .stitch-skills-header h2 {
+    font-size: 2rem;
+  }
+
+  .skills-status {
+    align-self: flex-start;
+  }
+}
