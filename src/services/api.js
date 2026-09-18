@@ -1,6 +1,4 @@
-import { API_URL } from "../config";
-
-export const API_BASE_URL = API_URL;
+import { API_BASE_URL } from "../config";
 
 function readCookie(name) {
   const cookie = document.cookie
@@ -11,8 +9,20 @@ function readCookie(name) {
   return cookie ? decodeURIComponent(cookie.slice(name.length + 1)) : "";
 }
 
+function resolveApiUrl(path) {
+  if (path.startsWith("http")) return path;
+
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+
+  if (normalizedPath.startsWith("/api")) {
+    return normalizedPath;
+  }
+
+  return `${API_BASE_URL}${normalizedPath}`;
+}
+
 export async function apiFetch(path, options = {}) {
-  const requestUrl = path.startsWith("http") ? path : `${API_BASE_URL}${path}`;
+  const requestUrl = resolveApiUrl(path);
   const method = (options.method || "GET").toUpperCase();
   const headers = new Headers(options.headers || {});
   const isPublicMutation = requestUrl.includes("/api/contact") ||
@@ -22,7 +32,7 @@ export async function apiFetch(path, options = {}) {
     !isPublicMutation && !requestUrl.endsWith("/api/admin/login");
 
   if (isAdminMutation && !readCookie("csrf_token")) {
-    await fetch(`${API_BASE_URL}/api/admin/csrf`, {
+    await fetch(`${API_BASE_URL}/admin/csrf`, {
       credentials: "include",
     });
   }

@@ -2,9 +2,6 @@
   command = "npm run build"
   publish = "dist"
 
-[build.environment]
-  VITE_API_URL = "https://portfolio-api.onrender.com"
-
 [[redirects]]
   from = "/*"
   to = "/index.html"

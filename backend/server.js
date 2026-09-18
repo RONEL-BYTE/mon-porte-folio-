@@ -152,7 +152,7 @@ const supabase = createClient(
 const adminCookieOptions = {
   httpOnly: true,
   secure: isProduction,
-  sameSite: isProduction ? "none" : "lax",
+  sameSite: "lax",
   maxAge: 8 * 60 * 60 * 1000,
   path: "/",
 };
@@ -946,7 +946,7 @@ app.post(
     res.cookie("csrf_token", csrfToken, {
       httpOnly: false,
       secure: isProduction,
-      sameSite: isProduction ? "none" : "lax",
+      sameSite: "lax",
       maxAge: adminCookieOptions.maxAge,
       path: "/",
     });
@@ -2546,9 +2546,7 @@ app.use((error, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, "0.0.0.0", () => {
-
-  console.log(
-    `Serveur démarré sur http://localhost:${PORT}`
-  );
-
+  console.log(`Serveur démarré sur http://localhost:${PORT}`);
 });
+
+module.exports = app;
