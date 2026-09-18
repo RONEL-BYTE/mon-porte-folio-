@@ -27,7 +27,11 @@ if (!process.env.JWT_SECRET) {
 
 const app = express();
 const isProduction = process.env.NODE_ENV === "production";
-const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+const frontendUrls = (process.env.FRONTEND_URL || "http://localhost:5173")
+  .split(",")
+  .map((value) => value.trim())
+  .filter(Boolean);
+const frontendUrl = frontendUrls[0] || "http://localhost:5173";
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 app.set("trust proxy", isProduction ? 1 : 0);
@@ -46,8 +50,8 @@ if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
 
 const allowedOrigins = new Set(
   isProduction
-    ? [frontendUrl]
-    : [frontendUrl, "http://localhost:5173", "http://127.0.0.1:5173"]
+    ? frontendUrls
+    : [...frontendUrls, "http://localhost:5173", "http://127.0.0.1:5173"]
 );
 
 app.use(helmet({
