@@ -1,8 +1,6 @@
-const defaultApiBaseUrl = import.meta.env.DEV
-  ? "http://localhost:5000"
-  : window.location.origin;
+import { API_URL } from "../config";
 
-export const API_BASE_URL = (import.meta.env.VITE_API_URL || defaultApiBaseUrl).replace(/\/$/, "");
+export const API_BASE_URL = API_URL;
 
 function readCookie(name) {
   const cookie = document.cookie
