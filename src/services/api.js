@@ -13,11 +13,6 @@ function resolveApiUrl(path) {
   if (path.startsWith("http")) return path;
 
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
-
-  if (normalizedPath.startsWith("/api")) {
-    return normalizedPath;
-  }
-
   return `${API_BASE_URL}${normalizedPath}`;
 }
 
@@ -32,7 +27,7 @@ export async function apiFetch(path, options = {}) {
     !isPublicMutation && !requestUrl.endsWith("/api/admin/login");
 
   if (isAdminMutation && !readCookie("csrf_token")) {
-    await fetch(`${API_BASE_URL}/admin/csrf`, {
+    await fetch(`${API_BASE_URL}/api/admin/csrf`, {
       credentials: "include",
     });
   }
